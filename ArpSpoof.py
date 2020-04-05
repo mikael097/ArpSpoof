@@ -12,6 +12,9 @@ class ArpSpoof:
         parser = argparse.ArgumentParser()
         parser.add_argument("--target-ip", "-t", dest="Target", help="Target IP")
         option = parser.parse_args()
+        if not option.Target:
+            print("[-] Target ip missing. Type --help for more information")
+            exit()
         return option
 
     @staticmethod
